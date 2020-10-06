@@ -48,7 +48,6 @@ try {
           }
         }
       }
-    }
   }
   currentBuild.result = 'SUCCESS'
 }
