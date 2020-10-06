@@ -1,5 +1,5 @@
 // Jenkinsfile
-String credentialsId = 'awsCredentials'
+//String credentialsId = 'awsCredentials'
 
 try {
   stage('checkout') {
@@ -13,9 +13,7 @@ try {
   stage('init') {
     node {
       withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awsCredentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        {
           sh 'terraform init'
-        }
       }
     }
   }
