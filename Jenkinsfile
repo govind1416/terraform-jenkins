@@ -38,7 +38,7 @@ try {
       node {
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awsCredentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])  {
           ansiColor('xterm') {
-            sh 'terraform apply -auto-approve'
+            sh 'terraform destroy -auto-approve'
           }
         }
       }
